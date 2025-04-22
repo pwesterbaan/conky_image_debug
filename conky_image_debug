@@ -1,0 +1,27 @@
+conky.config = {
+    background = true,
+    -- font = 'GE Inspira:size=8',
+    uppercase = false,
+    override_utf8_locale = true,
+    default_color = 'white',
+
+    alignment = 'top_right',
+    minimum_width = 164,
+
+    own_window = true,
+    own_window_type = 'desktop',
+    own_window_transparent = true,
+    own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+
+    double_buffer = true,
+
+    lua_load = '$HOME/.scripts/conky/transparent-image.lua',
+    lua_draw_hook_pre = 'conky_main',
+
+};
+
+conky.text = [[
+${lua conky_image $HOME/.scripts/conky/spotify/current_artwork.jpg 0 0 164 164}
+#${image $HOME/.scripts/conky/spotify/current_artwork.jpg -p 0,0 -s 164x164}
+${voffset 164}
+]];
