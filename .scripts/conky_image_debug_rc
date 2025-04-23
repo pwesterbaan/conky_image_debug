@@ -15,13 +15,13 @@ conky.config = {
 
     double_buffer = true,
 
-    lua_load = '$HOME/.scripts/conky/transparent-image.lua',
+    lua_load = '$HOME/conky_image_debug/.scripts/conky/transparent-image-new.lua',
     lua_draw_hook_pre = 'conky_main',
 
 };
 
 conky.text = [[
-${lua conky_image $HOME/.scripts/conky/spotify/current_artwork.jpg 0 0 164 164}
-#${image $HOME/.scripts/conky/spotify/current_artwork.jpg -p 0,0 -s 164x164}
+${lua_parse conky_image $HOME/conky_image_debug/.scripts/conky/spotify/current_artwork.png 0 0 164 164}
+#${image $HOME/conky_image_debug/.scripts/conky/spotify/current_artwork.jpg -p 0,0 -s 164x164}
 ${voffset 164}
 ]];
